@@ -76,7 +76,7 @@ def query_rag(query: str):
     response = ollama.chat(model=model_name, messages=[{"role": "user", "content": prompt}])
     return {"response": response['message']['content'].strip()}
 
-# **Preload documents into FAISS at startup**
+# Preload documents into FAISS at startup**
 if index.ntotal == 0:
     add_documents_to_faiss(document_texts)
 
